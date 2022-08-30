@@ -1,0 +1,55 @@
+require:
+  - rubocop-rails
+  - rubocop-rspec
+  - rubocop-performance
+
+Metrics/AbcSize:
+  Max: 25
+  Exclude:
+    - 'spec/support/**/*.rb'
+
+Rails/HasAndBelongsToMany:
+  Enabled: false
+Rails/SkipsModelValidations:
+  Enabled: false
+Rails/Output:
+  Exclude:
+    - db/seeds.rb
+
+RSpec/AnyInstance:
+  Enabled: false
+RSpec/ExampleLength:
+  Enabled: false
+RSpec/FilePath:
+  Enabled: false
+RSpec/InstanceVariable:
+  Enabled: false
+RSpec/LetSetup:
+  Enabled: false
+RSpec/MultipleMemoizedHelpers:
+  Enabled: false
+RSpec/MultipleExpectations:
+  Enabled: false
+RSpec/NamedSubject:
+  Enabled: false
+RSpec/NestedGroups:
+  Max: 6
+
+Style/BlockDelimiters:
+  Exclude:
+    - spec/**/*_spec.rb
+Style/Documentation:
+  Enabled: false
+Style/MixinUsage:
+  Enabled: false
+
+AllCops:
+  TargetRubyVersion: 3.1.0
+  DisplayCopNames: true
+  NewCops: enable
+  SuggestExtensions: false
+  Exclude:
+    - bin/**
+    - db/schema.rb
+    - db/migrate/**
+    - config/initializers/**
