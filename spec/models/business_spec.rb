@@ -15,4 +15,12 @@ RSpec.describe Business, type: :model do
     it { is_expected.to have_many(:emitter_invoices) }
     it { is_expected.to have_many(:receiver_invoices) }
   end
+
+  describe 'validations' do
+    subject { build(:business) }
+
+    it { is_expected.to validate_presence_of(:tax_name) }
+    it { is_expected.to validate_presence_of(:tax_id) }
+    it { is_expected.to validate_uniqueness_of(:tax_id) }
+  end
 end

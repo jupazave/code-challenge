@@ -15,4 +15,17 @@ RSpec.describe Invoice, type: :model do
     it { is_expected.to belong_to(:business_emitter) }
     it { is_expected.to belong_to(:business_receiver) }
   end
+
+  describe 'validations' do
+    subject { build(:invoice) }
+
+    it { is_expected.to validate_presence_of(:invoice_uuid) }
+    it { is_expected.to validate_uniqueness_of(:invoice_uuid) }
+  end
+
+  describe 'monetize' do
+    subject { build(:invoice) }
+
+    it { is_expected.to monetize(:amount_cents) }
+  end
 end

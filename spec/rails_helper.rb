@@ -3,6 +3,7 @@
 # This file is copied to spec/ when you run 'rails generate rspec:install'
 require 'spec_helper'
 require 'simplecov'
+require 'money-rails/test_helpers'
 ENV['RAILS_ENV'] ||= 'test'
 
 SimpleCov.minimum_coverage(100)

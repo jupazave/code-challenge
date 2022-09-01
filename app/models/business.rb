@@ -9,4 +9,7 @@ class Business < ApplicationRecord
                                foreign_key: 'business_receiver_id',
                                dependent: :destroy,
                                inverse_of: :business_receiver
+
+  validates :tax_name, presence: true
+  validates :tax_id, presence: true, uniqueness: true
 end

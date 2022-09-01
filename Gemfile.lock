@@ -93,6 +93,9 @@ GEM
       railties (>= 5.0.0)
     ffaker (2.21.0)
     ffi (1.15.5)
+    fuubar (2.5.1)
+      rspec-core (~> 3.0)
+      ruby-progressbar (~> 1.4)
     globalid (1.0.0)
       activesupport (>= 5.0)
     i18n (1.12.0)
@@ -272,6 +275,7 @@ DEPENDENCIES
   database_cleaner-active_record
   factory_bot_rails
   ffaker
+  fuubar (~> 2.5)
   lefthook (~> 1.1)
   listen (~> 3.3)
   money-rails (~> 1.12)

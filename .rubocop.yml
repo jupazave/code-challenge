@@ -71,6 +71,18 @@ Style/MixinUsage:
 Style/OpenStructUse:
   Enabled: false
 
+Style/TrailingCommaInArrayLiteral:
+  EnforcedStyleForMultiline: no_comma
+Style/TrailingCommaInHashLiteral:
+  EnforcedStyleForMultiline: no_comma
+Layout/ParameterAlignment:
+  EnforcedStyle: with_first_parameter
+Layout/ArgumentAlignment:
+  EnforcedStyle: with_first_argument
+
+Rails/UniqueValidationWithoutIndex:
+  Enabled: false
+
 AllCops:
   TargetRubyVersion: 3.1.0
   DisplayCopNames: true
