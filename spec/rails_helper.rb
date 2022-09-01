@@ -4,6 +4,7 @@
 require 'spec_helper'
 require 'simplecov'
 require 'money-rails/test_helpers'
+require 'active_storage_validations/matchers'
 ENV['RAILS_ENV'] ||= 'test'
 
 SimpleCov.minimum_coverage(100)
@@ -44,6 +45,7 @@ end
 
 RSpec.configure do |config|
   config.include FactoryBot::Syntax::Methods
+  config.include ActiveStorageValidations::Matchers
   # Remove this line if you're not using ActiveRecord or ActiveRecord fixtures
   config.fixture_path = "#{::Rails.root}/spec/fixtures"
 

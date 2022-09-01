@@ -59,7 +59,9 @@ gem 'net-pop', require: false
 gem 'net-smtp', require: false
 
 gem 'active_model_serializers', '~> 0.10.0'
+gem 'active_storage_validations', '~> 0.9.8'
 gem 'attr_extras', '~> 6.2'
 gem 'money-rails', '~>1.12'
 gem 'ransack', '~> 3.2'
 gem 'rqrcode', '~> 2.0'
+

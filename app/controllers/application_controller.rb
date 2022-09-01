@@ -25,4 +25,8 @@ class ApplicationController < ActionController::API
     session_id = request.headers['Authorization']&.split(' ')&.last
     @session = Session.find_by(session_id:)
   end
+
+  def current_user
+    @current_user ||= session&.user
+  end
 end
