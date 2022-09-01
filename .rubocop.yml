@@ -8,6 +8,32 @@ Metrics/AbcSize:
   Exclude:
     - 'spec/support/**/*.rb'
 
+Metrics/BlockLength:
+  Enabled: true
+  CountComments: false
+  Max: 100
+  ExcludedMethods:
+    - 'describe'
+    - 'context'
+  Exclude:
+    - '**/*.gemspec'
+
+Metrics/MethodLength:
+  Enabled: true
+  CountComments: false
+  Max: 25
+  Exclude:
+    - '**/*.gemspec'
+    - 'spec/**/*.rb'
+
+Layout/LineLength:
+  Enabled: true
+  Max: 80
+  Include:
+    - 'app/**/*'
+  Exclude:
+    - 'db/schema.rb'
+
 Rails/HasAndBelongsToMany:
   Enabled: false
 Rails/SkipsModelValidations:
