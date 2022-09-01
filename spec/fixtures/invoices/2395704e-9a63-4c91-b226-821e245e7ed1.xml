@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hash>
+  <invoice_uuid>2395704e-9a63-4c91-b226-821e245e7ed1</invoice_uuid>
+  <status>active</status>
+  <emitter>
+    <name>Elba Preciado Rojas</name>
+    <rfc>GVN720527ZD6</rfc>
+  </emitter>
+  <receiver>
+    <name>Margarito Martínez Lozano</name>
+    <rfc>TUO790218FHP</rfc>
+  </receiver>
+  <amount>
+    <!-- eg. 1234 cents = 12.34 -->
+    <cents type="integer">248319</cents>
+    <!-- ISO 4217 -->
+    <currency>GIP</currency>
+  </amount>
+  <emitted_at type="date">2020-12-13</emitted_at>
+  <expires_at type="date">2021-03-27</expires_at>
+  <signed_at type="date">2021-11-04</signed_at>
+  <cfdi_digital_stamp type="text">5s63ummbexw004v6y7mf99c2rexv1cd0wzwckhts8yhl62c1abibmx616aipgnvk9zbpm7dz65rafrejny17g9i5rblktc6dyf57ay82k8jekyqqgcfrbu1d1dowhdrs83nqkwup2z2468yujvggso50fa52sd6teplb52r5mv10a5oao95cn4fgzknmeyc40bgi0gqd6s53kegwsfgraf6kjnfrwf8p4rfdcba072ifjljf7ifbszbjymu7exb</cfdi_digital_stamp>
+</hash>

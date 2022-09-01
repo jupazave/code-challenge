@@ -2,7 +2,7 @@
 
 FactoryBot.define do
   factory :business do
-    tax_name { FFaker::Company.name }
-    sequence(:tax_id) { |n| "ABB220831AB#{n}" }
+    tax_name { FFaker::NameMX.full_name }
+    tax_id { FFaker::IdentificationMX.rfc_persona_moral }
   end
 end

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hash>
+  <invoice_uuid>ffdf4cfc-bcf9-4905-bbd9-013bdcaf4965</invoice_uuid>
+  <status>active</status>
+  <emitter>
+    <name>Luisa Cabañas Munguía</name>
+    <rfc>IB&amp;121021DWH</rfc>
+  </emitter>
+  <receiver>
+    <name>Hugo Nava Irineo</name>
+    <rfc>TKE890704CM5</rfc>
+  </receiver>
+  <amount>
+    <!-- eg. 1234 cents = 12.34 -->
+    <cents type="integer">265266</cents>
+    <!-- ISO 4217 -->
+    <currency>HKD</currency>
+  </amount>
+  <emitted_at type="date">2019-06-09</emitted_at>
+  <expires_at type="date">2019-08-09</expires_at>
+  <signed_at type="date">2019-01-26</signed_at>
+  <cfdi_digital_stamp type="text">rwgayeu0y2352cfjwzdpceoa9izsqsmnu8n6obtldy6ygrt3rmlyfedkb3qsjnlcw5gly1efji8n1d6mddkbzfvwaw1fgme7v23srt6wer7knn24s956k3p2ucaag55syks4egd2j50h17a34lp6hcygoh37uqudruhrxkvwip2eog0zgtkgs46wm6mb1x6xkoaepp1cvjtc07c69ummz6rxcpqgmfzfp1izhm4o5dzu33h83kux8wzrfjf4tw5</cfdi_digital_stamp>
+</hash>
