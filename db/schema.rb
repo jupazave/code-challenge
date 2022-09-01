@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_08_31_184757) do
+ActiveRecord::Schema.define(version: 2022_09_01_002931) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -35,6 +35,7 @@ ActiveRecord::Schema.define(version: 2022_08_31_184757) do
     t.text "cfdi_digital_stamp"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.text "raw_xml"
     t.index ["business_emitter_id"], name: "index_invoices_on_business_emitter_id"
     t.index ["business_receiver_id"], name: "index_invoices_on_business_receiver_id"
     t.index ["invoice_uuid"], name: "index_invoices_on_invoice_uuid", unique: true

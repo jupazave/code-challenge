@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hash>
+  <status>active</status>
+  <emitter>
+    <name>Brenda Hinojosa Quiñones</name>
+    <rfc>QTX860320FCL</rfc>
+  </emitter>
+  <receiver>
+    <name>Tamara Georgina Mercado Espinoza</name>
+    <rfc>HAV951105297</rfc>
+  </receiver>
+  <amount>
+    <!-- eg. 1234 cents = 12.34 -->
+    <cents type="integer">478843</cents>
+    <!-- ISO 4217 -->
+    <currency>MXN</currency>
+  </amount>
+  <emitted_at type="date">2022-09-10</emitted_at>
+  <expires_at type="date">2022-10-14</expires_at>
+  <signed_at type="date">2018-02-26</signed_at>
+  <cfdi_digital_stamp type="text">w8rfbwuyq2fk6bej9i8u8axti45ancaci77bs1cobc75rddavw1zhzs47vyctyzctd78gb6xlcgv0dvs8zv280ghq8hat50pqs7w8xtj4vcpy3anwx75igwf7ffdvaqsjifzsd01lk27pu9q3y5renuf1otvo4y9dtt7obf4ytj015a084lmhgmfookphyl0iyy7g9om8lydxi02cmc0na7ej1ndsb255p9r8agcgie6yz27xt4tvyhhpu4wm4i</cfdi_digital_stamp>
+</hash>
