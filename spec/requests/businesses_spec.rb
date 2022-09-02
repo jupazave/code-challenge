@@ -148,5 +148,28 @@ RSpec.describe '/businesses', type: :request do
           match(a_string_including('application/json'))
       end
     end
+
+    context 'with invalid parameters' do
+      subject do
+        patch(business_url(business), params: { business: invalid_arguments },
+                                      headers:,
+                                      as: :json)
+      end
+
+      let!(:invalid_arguments) do
+        {
+          tax_name: ''
+        }
+      end
+
+      let!(:business) { create(:business) }
+
+      it 'renders a JSON response with errors for the business' do
+        subject
+        expect(response).to have_http_status(:unprocessable_entity)
+        expect(response.content_type).to \
+          match(a_string_including('application/json'))
+      end
+    end
   end
 end

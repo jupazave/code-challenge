@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class BusinessesController < ApplicationController
-  before_action :set_business, only: %i[show update destroy]
+  before_action :set_business, only: %i[show update]
 
   # GET /businesses
   def index
@@ -33,11 +33,6 @@ class BusinessesController < ApplicationController
     else
       render json: @business.errors, status: :unprocessable_entity
     end
-  end
-
-  # DELETE /businesses/1
-  def destroy
-    @business.destroy
   end
 
   private

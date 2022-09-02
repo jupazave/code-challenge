@@ -188,6 +188,24 @@ RSpec.describe '/invoices', type: :request do
           match(a_string_including('application/json'))
       end
     end
+
+    context 'with invalid parameters' do
+      subject do
+        patch invoice_url(invoice),
+              params: { invoice: invalid_attributes }, headers:, as: :json
+      end
+
+      let!(:invalid_attribtues) do
+        { business_receiver_id: 999_999 }
+      end
+
+      it 'renders a JSON response with errors for the invoice' do
+        subject
+        expect(response).to have_http_status(:unprocessable_entity)
+        expect(response.content_type).to \
+          match(a_string_including('application/json'))
+      end
+    end
   end
 
   describe 'DELETE /destroy' do
