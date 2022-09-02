@@ -12,8 +12,8 @@ RSpec.describe Business, type: :model do
   describe 'associations' do
     subject { build(:business) }
 
-    it { is_expected.to have_many(:emitter_invoices) }
-    it { is_expected.to have_many(:receiver_invoices) }
+    it { is_expected.to have_many(:emitted_invoices) }
+    it { is_expected.to have_many(:received_invoices) }
   end
 
   describe 'validations' do

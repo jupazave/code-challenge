@@ -20,12 +20,22 @@ RSpec.describe Invoice, type: :model do
     subject { build(:invoice) }
 
     it { is_expected.to validate_presence_of(:invoice_uuid) }
-    it { is_expected.to validate_uniqueness_of(:invoice_uuid) }
+    it { is_expected.to validate_uniqueness_of(:invoice_uuid).case_insensitive }
   end
 
   describe 'monetize' do
     subject { build(:invoice) }
 
     it { is_expected.to monetize(:amount_cents) }
+  end
+
+  describe 'methods' do
+    describe '#qrcode' do
+      subject { build(:invoice) }
+
+      it 'returns a RQRCode::QRCode' do
+        expect(subject.qrcode).to be_a(RQRCode::QRCode)
+      end
+    end
   end
 end

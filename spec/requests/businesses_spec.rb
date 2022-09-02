@@ -24,6 +24,8 @@ RSpec.describe '/businesses', type: :request do
     }
   end
 
+  let(:json) { JSON.parse(response.body) }
+
   describe 'GET /index' do
     let!(:business) { create(:business) }
 
@@ -47,11 +49,32 @@ RSpec.describe '/businesses', type: :request do
   end
 
   describe 'GET /show' do
+    subject { get business_url(business), headers:, as: :json }
+
     let!(:business) { create(:business) }
 
     it 'renders a successful response' do
-      get business_url(business), headers:, as: :json
+      subject
       expect(response).to be_successful
+    end
+
+    it 'renders the invoice' do
+      subject
+      expect(json).to \
+        match(
+          a_hash_including(
+            'id' => business.id,
+            'tax_name' => business.tax_name,
+            'tax_id' => business.tax_id
+          )
+        )
+    end
+
+    context 'when the invoice request does not exists' do
+      it 'renders a 404 response' do
+        get business_url(999_999), headers:, as: :json
+        expect(response).to have_http_status(:not_found)
+      end
     end
   end
 

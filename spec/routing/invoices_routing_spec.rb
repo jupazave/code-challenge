@@ -12,6 +12,10 @@ RSpec.describe InvoicesController, type: :routing do
       expect(get: '/invoices/1').to route_to('invoices#show', id: '1')
     end
 
+    it 'routes to #qrcode' do
+      expect(get: '/invoices/1/qrcode').to route_to('invoices#qrcode', id: '1')
+    end
+
     it 'routes to #create' do
       expect(post: '/invoices').to route_to('invoices#create')
     end

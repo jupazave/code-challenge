@@ -13,5 +13,7 @@ FactoryBot.define do
     emitted_at { FFaker::Time.between(32.days.from_now, 1.day.ago) }
     expires_at { FFaker::Time.between(emitted_at, 30.days.from_now) }
     signed_at { emitted_at }
+
+    cfdi_digital_stamp { FFaker::DizzleIpsum.characters }
   end
 end
