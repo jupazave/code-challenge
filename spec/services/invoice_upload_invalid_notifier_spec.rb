@@ -12,7 +12,7 @@ RSpec.describe InvoiceUploadInvalidNotifier do
     allow(Rails.logger).to receive(:error).and_call_original
     subject
     expect(Rails.logger).to \
-      have_received(:call).with(
+      have_received(:error).with(
         "User #{user.email} uploaded #{count} invalid invoices"
       )
   end

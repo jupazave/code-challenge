@@ -115,7 +115,8 @@ RSpec.describe '/invoices', type: :request do
     it 'renders the qrcode' do
       subject
       expect(response.body).to eq(invoice.qrcode.as_png(size: 300).to_s)
-      expect(response.header['Content-Type']).to eq('image/png')
+      expect(response.content_type).to \
+        match(a_string_including('image/png'))
     end
 
     context 'when there is no format' do
@@ -124,7 +125,8 @@ RSpec.describe '/invoices', type: :request do
       it 'renders the qrcode' do
         subject
         expect(response.body).to eq(invoice.qrcode.as_png(size: 300).to_s)
-        expect(response.header['Content-Type']).to eq('image/png')
+        expect(response.content_type).to \
+          match(a_string_including('image/png'))
       end
     end
 
@@ -139,7 +141,8 @@ RSpec.describe '/invoices', type: :request do
       it 'renders the qrcode' do
         subject
         expect(response.body).to eq(invoice.qrcode.as_png(size: 300).to_s)
-        expect(response.header['Content-Type']).to eq('image/png')
+        expect(response.content_type).to \
+          match(a_string_including('image/png'))
       end
     end
 
@@ -149,7 +152,8 @@ RSpec.describe '/invoices', type: :request do
       it 'renders the qrcode' do
         subject
         expect(response.body).to eq(invoice.qrcode.as_svg)
-        expect(response.header['Content-Type']).to eq('image/svg+xml')
+        expect(response.content_type).to \
+          match(a_string_including('image/svg+xml'))
       end
     end
   end
