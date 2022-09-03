@@ -103,7 +103,9 @@ RSpec.describe '/invoices', type: :request do
   end
 
   describe 'GET /qrcode' do
-    subject { get qrcode_invoice_url(invoice), headers:, as: :json }
+    subject { get qrcode_invoice_url(invoice, format:), headers:, as: :json }
+
+    let(:format) { 'png' }
 
     it 'renders a successful response' do
       subject
@@ -114,6 +116,41 @@ RSpec.describe '/invoices', type: :request do
       subject
       expect(response.body).to eq(invoice.qrcode.as_png(size: 300).to_s)
       expect(response.header['Content-Type']).to eq('image/png')
+    end
+
+    context 'when there is no format' do
+      let(:format) { nil }
+
+      it 'renders the qrcode' do
+        subject
+        expect(response.body).to eq(invoice.qrcode.as_png(size: 300).to_s)
+        expect(response.header['Content-Type']).to eq('image/png')
+      end
+    end
+
+    context 'when format is different to svg or png' do
+      let(:format) { 'pdf' }
+
+      it 'renders a successful response' do
+        subject
+        expect(response).to be_successful
+      end
+
+      it 'renders the qrcode' do
+        subject
+        expect(response.body).to eq(invoice.qrcode.as_png(size: 300).to_s)
+        expect(response.header['Content-Type']).to eq('image/png')
+      end
+    end
+
+    context 'when format is svg' do
+      let(:format) { 'svg' }
+
+      it 'renders the qrcode' do
+        subject
+        expect(response.body).to eq(invoice.qrcode.as_svg)
+        expect(response.header['Content-Type']).to eq('image/svg+xml')
+      end
     end
   end
 

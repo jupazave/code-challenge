@@ -19,10 +19,13 @@ class InvoicesController < ApplicationController
   end
 
   def qrcode
-    send_data \
-      @invoice.qrcode.as_png(size: 300).to_s,
-      type: 'image/png',
-      disposition: 'inline'
+    if params[:format] == 'svg'
+      render plain: @invoice.qrcode.as_svg,
+             content_type: 'image/svg+xml'
+    else
+      render plain: @invoice.qrcode.as_png(size: 300).to_s,
+             content_type: 'image/png'
+    end
   end
 
   # POST /invoices
