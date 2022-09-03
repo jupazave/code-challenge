@@ -8,7 +8,7 @@ class AuthenticationController < ApplicationController
 
     if user&.authenticate(params[:password])
       session = Session.create(user_id: user.id, session_id: SecureRandom.uuid)
-      render json: { token: session.session_id }, status: :ok
+      render json: { session_id: session.session_id }, status: :ok
     else
       render json: { error: 'Invalid credentials' }, status: :unauthorized
     end

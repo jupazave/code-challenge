@@ -112,13 +112,8 @@ RSpec.describe '/invoices', type: :request do
 
     it 'renders the qrcode' do
       subject
-      expect(response.body).to eq(invoice.qrcode.as_svg(
-                                    color: '000',
-                                    shape_rendering: 'crispEdges',
-                                    module_size: 11,
-                                    standalone: true,
-                                    use_path: true
-                                  ))
+      expect(response.body).to eq(invoice.qrcode.as_png(size: 300).to_s)
+      expect(response.header['Content-Type']).to eq('image/png')
     end
   end
 

@@ -19,18 +19,18 @@ RSpec.describe 'Authentications', type: :request do
       expect(response).to have_http_status(:success)
     end
 
-    it 'returns a token' do
+    it 'returns a session_id' do
       subject
-      expect(json['token']).to be_present
+      expect(json['session_id']).to be_present
     end
 
     it 'creates a new session' do
       expect { subject }.to change(Session, :count).by(1)
     end
 
-    it 'returns the session id' do
+    it 'returns the session_id' do
       subject
-      expect(json['token']).to eq(Session.last.session_id)
+      expect(json['session_id']).to eq(Session.last.session_id)
     end
 
     context 'when the user does not exist' do

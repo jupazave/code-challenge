@@ -18,7 +18,12 @@ class InvoicesController < ApplicationController
     render json: @invoice
   end
 
-  def qrcode; end
+  def qrcode
+    send_data \
+      @invoice.qrcode.as_png(size: 300).to_s,
+      type: 'image/png',
+      disposition: 'inline'
+  end
 
   # POST /invoices
   def create
