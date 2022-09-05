@@ -69,3 +69,5 @@ gem 'will_paginate', '~> 3.3'
 
 
 
+
+gem "aws-sdk-s3", "~> 1.114"
