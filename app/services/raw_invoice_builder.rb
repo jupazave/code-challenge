@@ -15,17 +15,11 @@ class RawInvoiceBuilder
   attr_reader :invoice
 
   def error_result
-    OpenStruct.new(
-      successful?: false,
-      errors:
-    )
+    OpenStruct.new successful?: false, errors:
   end
 
   def successful_result
-    OpenStruct.new(
-      successful?: true,
-      invoice:
-    )
+    OpenStruct.new successful?: true, invoice:
   end
 
   def valid?
@@ -52,7 +46,8 @@ class RawInvoiceBuilder
           cfdi_digital_stamp:,
           raw_xml:,
           business_emitter:,
-          business_receiver:
+          business_receiver:,
+          status:
         )
 
         invoice.save!
@@ -111,6 +106,10 @@ class RawInvoiceBuilder
 
   def cfdi_digital_stamp
     @cfdi_digital_stamp ||= xml_at_path('//hash/cfdi_digital_stamp')
+  end
+
+  def status
+    @status ||= xml_at_path('//hash/status')
   end
 
   def xml_at_path(path)
